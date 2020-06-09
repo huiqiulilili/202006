@@ -1,0 +1,154 @@
+create table stu_test(
+	id int,
+	name varchar(20) comment '姓名',
+	password varchar(50) comment '密码',
+	age int,
+	sex varchar(1),
+	birthday timestamp,
+	amout decimal(13,2),
+	resume text
+);
+
+
+
+
+
+create database if not exists bit32mall;
+
+use bit32mall;
+
+create table if not exists goods(
+	goods_id int primary key auto_increment comment '商品编号',
+	goods_name varchar(20) not null comment '商品名称',
+	unitprice int not null default 0 comment '单价，单位分',
+	category varchar(20) comment '商品分类',
+	provider varchar(20) not null comment '供应商名称'
+);
+
+
+create table customer(
+	customer_id int primary key auto_increment comment '客户号',
+	name varchar(20) not null comment '姓名',
+	address varchar(20) not null comment '地址',
+	email varchar(20) not null comment '邮箱',
+	sex bit not null commemt '性别',
+	card_id char(18) unique key commemt '身份证'
+);
+
+create table purchase(
+	order_id int primary key auto_increment commemt '订单号',
+	customer_id int not null commemt '客户号',
+	goods_id int not null commemt '商品号',
+	nums int default 0 commemt '购买数量',
+	foregin key (customer_id) references customer(customer_id),
+	foregin key (goods_id) references goods(goods_id)
+);
+
+
+
+
+create table if not exists student(
+	id int,
+	sn int commemt '学号',
+	name varchar(20) comment '姓名',
+	qq_mail varchar(20) comment 'QQ邮箱'
+);
+
+insert into student values(100,1000,'唐三藏');
+insert into student values(101,1001,'孙悟空');
+
+insert into student(id,sn,name) values
+(102,2001,'曹孟德'),
+(103，2002，'孙仲谋');
+
+
+
+-- 创建考试成绩表
+DROP TABLE IF EXISTS exam_result;
+CREATE TABLE exam_result (
+id INT,
+name VARCHAR(20),
+chinese DECIMAL(3,1),
+math DECIMAL(3,1),
+english DECIMAL(3,1)
+);
+-- 插入测试数据
+INSERT INTO exam_result (name, chinese, math, english) VALUES
+('唐三藏', 67, 98, 56),
+('孙悟空', 87.5, 78, 77),
+('猪悟能', 88, 98.5, 90),
+('曹孟德', 82, 84, 67),
+('刘玄德', 55.5, 85, 45),
+('孙权', 70, 73, 78.5),
+('宋公明', 75, 65, 30);
+
+
+select id,name,chinese + math + english 总分 from exam_result;
+
+select name,qq_mail from student order by qq_mail;
+
+select name,qq_mail from student order by qq_mail desc;
+
+select name,english from exam_result where english < 60;
+
+select name,chinese,english from exam_result where chinese > english;
+
+
+SELECT * FROM exam_result WHERE chinese > 80 or math>70 and english > 70;
+SELECT * FROM exam_result WHERE (chinese > 80 or math>70) and english > 70;
+
+select name,chinese from exam_result where chinese between 80 and 90;
+
+select name ,chinese from exam_result where chinese >= 80 and chinese <= 90;
+
+select name,math from exam_result where math = 58 or math = 59 or math = 98 or math = 99;
+select name,math from exam_result where math in (58,59,98,99);
+
+select name from exam_result where name like '孙%';
+
+select name from exam_result where name like '孙_';
+
+select id,name,math,english,chinese from exam_result order by id limit 0,3;
+
+select id,name,math,english,chinese from exam_result order by id limit 3 offset 0;
+
+
+update exam_result set math = 80 where name = '孙悟空';
+
+updatw exam_result set math = math + 30 order by chinese + math + english limit 3;
+
+
+
+delete from exam_result where name = '孙悟空';
+
+
+DROP TABLE IF EXISTS for_delete;
+CREATE TABLE for_delete (
+id INT,
+name VARCHAR(20)
+);
+-- 插入测试数据
+INSERT INTO for_delete (name) VALUES ('A'), ('B'), ('C');
+-- 删除整表数据
+DELETE FROM for_delete;
+
+
+drop table if exists classes;
+create table classes(
+	id int primary key auto_increment,
+	name varchar(20),
+	`desc` varchar(100)
+);
+
+
+
+drop table if exists student;
+create table student(
+	id int primary key auto_increment,
+	sn int unique,
+	name varchar(20) default 'unkown',
+	qq_mail varchar(20),
+	class_id int ,
+	foregin key (class_id) references classes(id)
+); 
+
