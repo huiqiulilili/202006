@@ -1,0 +1,311 @@
+import time
+import datetime
+import math
+import turtle
+import io
+# a = 3
+# print(a)
+# print(type(a))
+# print(id(a))
+# print("====================")
+# b = "刘雨昕"
+# print(b)
+# print(type(b))
+# print(id(b))
+
+
+# print(datetime)
+
+# a,b = 20,30
+# a,b = b,a
+# print(a)
+# print(b)
+# print(float(3))
+
+# time.time()
+# print(time.time())
+
+
+
+
+# # 定义多个点坐标
+# x1,y1 = 100,100
+# x2,y2 = 100,-100
+# x3,y3 = -100,-100
+# x4,y4 = -100,100
+#
+# # 绘制折线
+# turtle.penup()
+# turtle.goto(x1,y1)
+# turtle.pendown()
+# turtle.goto(x2,y2)
+# turtle.goto(x3,y3)
+# turtle.goto(x4,y4)
+#
+# # 计算起始点和终点的距离
+# x = math.sqrt((x1-x4)**2 + (y1-y4)**2)
+# turtle.write(x)
+
+
+#
+# a = -256
+# b = -256
+# print(a is b)
+# print(a == b)
+
+# print(ord("A"))
+# print(ord("六"))
+
+
+
+# a = "sxt"
+# print(a)
+# print(len(a))
+#
+# b = "我爱 '刘雨昕'"
+# print(len(b))
+
+
+
+
+
+# x = input()
+# print(x)
+
+
+#
+# x = "abcdefg"
+# y = x.replace('a','刘雨昕')
+# print(x)
+# print(y)
+# print(x[::])
+#
+# a = "abacadae"
+# b = a.split('a')
+# print(b)
+
+# a = "adc_123"
+# b = "adc_123"
+# print(a is b)
+#
+# c = "dd#"
+# d = "dd#"
+# print(c is d)
+# print(id(c))
+# print(id(d))
+
+
+
+# a = "asdfghjkl"
+# print("a" in a)
+# print("aa" in a)
+#
+# a = "姓名：{0}，年龄：{1}"
+# print(a.format("刘雨昕",23))
+#
+# a = "姓名：{name},年龄：{age}"
+# print(a.format(name = "刘雨昕",age = 23))
+
+
+
+# print("我叫{0}，我喜欢{1:*^8}".format("刘雨昕","唱歌跳舞"))
+
+
+# s = "hello,sxt"
+# sio = io.StringIO(s)
+# print(sio)
+# print(sio.getvalue())
+# print(sio.seek(7))
+# sio.write("g")
+# print(sio.getvalue())
+
+
+# a = []
+# a.append(20)
+# print(a)
+
+# a = list()
+# print(a)
+# b = list("刘雨昕")
+# print(b)
+
+
+#
+# a = range(10)
+# print(type(a))
+# print(list(a))
+
+# a = range(5)
+# print(a)
+# print(type(a))
+# print(list(a))
+
+# a = [x*2 for x in range(5)]
+# print(a)
+#
+# a = [x*2 for x in range(100) if x%9 == 0]
+# print(a)
+
+# a = [1 , 2]
+# print(a)
+# print(id(a))
+# a = a + [3]
+# print(a)
+# print(id(a))
+
+# a = [1,2]
+# print(id(a))
+# a.extend([10,20])
+# print(a)
+# print(id(a))
+# a.append([100,200])
+# print(id(a))
+# print(a)
+#
+# a.insert(2,1000)
+# print(a)
+# print(a*2)
+
+
+# a = [
+#     ["刘雨昕",23,2999999,"贵州"],
+#     ["蔡徐坤",22,3456789,"a"],
+# ]
+#
+# # print(a[0])
+#
+# for m in range(2):
+#     for n in range(4):
+#         print(a[m][n],end = '\t')
+#     print()
+
+# a = (10,20,30)
+# print(a)
+# print(type(a))
+
+
+# a = tuple("abc")
+# print(a)
+# b = list("abc")
+# print(b)
+# c = tuple(range(3))
+# print(c)
+# d = tuple(b)
+# print(d)
+# print(len(d))
+
+# a = [10,20,30]
+# b = [40,50,60]
+# c = [70,80,90]
+# d = zip(a,b,c)
+# print(list(d))
+# print(type(d))
+
+# s = (x*2 for x in range(5))
+# print(s.__next__())
+# print(s.__next__())
+# print(s.__next__())
+# print(s.__next__())
+
+
+# a = {
+#     "name" : "刘雨昕",
+#     "age" : 18,
+#     "dd" : [2,3,4]
+# }
+# print(a)
+# b = dict(name="刘雨昕",age=23)
+# print(b)
+# c = dict([("name","lyx"),("age",23)])
+# print(c)
+
+
+
+# k = ['name','age','job']
+# v = ['lyx',23,'idol']
+# d = dict(zip(k,v))
+# print(d)
+
+
+# a = dict.fromkeys(['name','age','job'])
+# print(a)
+
+
+a = {'name':'lyx','age':23,'job':'idol'}
+print(a['name'])
+# print(a['nam'])
+# print(a.get('age'))
+# print(a.get('ae'))
+# print(a.get('agg','不存在'))
+# print(a.keys())
+# print(a.values())
+# print(len(a))
+# print('name' in a)
+
+# b = {'name':'lyx','age':98,'job':'dance'}
+# print(b.popitem())
+# print(b.popitem())
+# print(b.popitem())
+# b.update(a)
+# print(a)
+# print(b)
+# del(b['name'])
+# print(b)
+# b = b.pop("age")
+# print(b)
+# print(type(b))
+
+
+# a,b,c = (10,20,30)
+# print(a)
+#
+# s = {'name':'lyx','age':23,}
+# a,b = s
+# print(a)
+# print(b)
+# c,d = s.values()
+# print(c)
+# print(d)
+# d,e = s.items()
+# print(d)
+# print(e)
+
+
+
+
+
+
+
+
+
+# t1 = {'name':"刘雨昕1",'age':23}
+# t2 = {'name':"刘雨昕2",'age':23}
+# t3 = {'name':"刘雨昕3",'age':23}
+# t = [t1,t2,t3]
+# print(t)
+# for i in range(len(t)):
+#     print(t[i].get('name'),t[i].get('age'))
+
+
+
+# a = {1,2,3}
+# print(a)
+# a.add('4')
+# print(a)
+#
+# a.remove('4')
+# print(a)
+# a.add(1)
+# print(a)
+
+
+
+a = {1,3,'lyx'}
+b = {'she','is','mylaopo',1}
+print(a|b)
+print(a&b)
+print(a - b)
+print(a.union(b))
+print(a.intersection(b))
+print(a.difference(b))
+
