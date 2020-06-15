@@ -1,0 +1,21 @@
+import turtle
+
+my_color = ("red","green","yellow","black")
+t = turtle.Pen() # 画笔
+t.width(4)
+t.speed(5)
+for i in range(0,5):
+    t.penup()
+    t.goto(0,-10*i)
+    t.pendown()
+    t.color(my_color[i%len(my_color)])
+    t.circle(10*i+10)
+
+
+# t.goto(0,0)
+# t.circle(100)
+#
+# t.goto(0,-100)
+# t.circle(200)
+
+turtle.done() # 程序执行完，窗口还在
